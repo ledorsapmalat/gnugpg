@@ -8,4 +8,4 @@ directory '/opt/gnugpg' do
   owner 'root'
   group 'root'
   action :create
-end 
+end

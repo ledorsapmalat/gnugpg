@@ -15,6 +15,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default['gnugpg']['installer']['windos']="gpg4win-3.0.0.exe"
-default['gnugpg']['installer']['debian']=""
-default['gnugpg']['installer']['centos']=""
+default['gnugpg']['installer']['windos'] = 'gpg4win-3.0.0.exe'
+default['gnugpg']['installer']['debian'] = ''
+default['gnugpg']['installer']['centos'] = ''
