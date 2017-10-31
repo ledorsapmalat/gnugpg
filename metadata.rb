@@ -1,15 +1,13 @@
 name 'gnupgp'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
-license 'all_rights'
+maintainer 'Rodel Manalo Talampas'
+maintainer_email 'rodel.talampas@gmail.com'
+license 'GNU General Public License'
 description 'Installs/Configures gnupgp'
 long_description 'Installs/Configures gnupgp'
 version '0.1.0'
 
-# If you upload to Supermarket you should set this so your cookbook
-# gets a `View Issues` link
-# issues_url 'https://github.com/<insert_org_here>/gnupgp/issues' if respond_to?(:issues_url)
+supports 'centos', '>= 6.2'
+supports 'amazon', '>= 2016.09'
 
-# If you upload to Supermarket you should set this so your cookbook
-# gets a `View Source` link
-# source_url 'https://github.com/<insert_org_here>/gnupgp' if respond_to?(:source_url)
+source_url 'https://github.com/rodel-talampas/gnupgp' if respond_to?(:source_url)
+issues_url 'https://github.com/rodel-talampas/gnupgp/issues' if respond_to?(:issues_url)
