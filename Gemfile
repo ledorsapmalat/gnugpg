@@ -1,6 +1,7 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "foodcritic"
-gem "rubocop"
-gem "test-kitchen"
-gem "kitchen-vagrant"
+gem 'berkshelf'
+gem 'foodcritic'
+gem 'kitchen-vagrant'
+gem 'rubocop'
+gem 'test-kitchen'
