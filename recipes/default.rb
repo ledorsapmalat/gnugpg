@@ -2,4 +2,5 @@
 # Cookbook Name:: gnupgp
 # Recipe:: default
 #
-# Copyright (c) 2017 The Authors, All Rights Reserved.
+# Copyright (c) 2017 Rodel M. Talampas, All Rights Reserved.
+
