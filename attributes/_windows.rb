@@ -15,14 +15,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default['gnugpg']['installer']['windos'] = 'gpg4win-3.0.0.exe'
-default['gnugpg']['installer']['debian'] = ''
-default['gnugpg']['installer']['centos'] = ''
-
-default['gnugpg']['temp']['directory'] = 'c:\\tmp'
-
-default['gnugpg']['key']['public'] = 'changeme'
-default['gnugpg']['key']['private'] = 'changeme'
-default['gnugpg']['key']['passphrase'] = 'changeme'
-
-default['gnugpg']['keys']['file'] = ['gpg-secret-key.asc']
+default['gnugpg']['win']['install_loc'] = 'c:\\gnugpg'
+default['gnugpg']['win']['install_loc_2'] = 'c:\\GnuPG'
+default['gnugpg']['win']['checksum'] = '2565bf6faf8defb8fa61b0b1a30f0e68e2ca5ceb3177d08516e00ca1620252bf'
+default['gnugpg']['win']['version'] = '3.0.0'
+default['gnugpg']['win']['download_url'] = "http://static.helixleisure.net/installer/gnu/gpg4win-#{node['gnugpg']['win']['version']}.exe"

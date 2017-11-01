@@ -4,6 +4,11 @@
 #
 # Copyright (c) 2017 Rodel M. Talampas, All Rights Reserved.
 
+directory node['gnugpg']['temp']['directory'].to_s do
+  group 'Administrators'
+  action :create
+end
+
 case node['platform']
 when 'debian', 'ubuntu'
   include_recipe 'gnugpg::_deb_install'
