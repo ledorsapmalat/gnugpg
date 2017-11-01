@@ -14,7 +14,7 @@ init_file_path = "#{node['gnugpg']['temp']['directory']}\\config.ini"
 
 # Create an ini file
 template init_file_path do
-  source 'win/gpg-config.ini.erb'
+  source 'gpg-config.ini.erb'
 end
 
 # Download the installer file
@@ -46,7 +46,7 @@ env 'add_gnugpg_to_path' do
 end
 
 node['gnugpg']['keys']['file'].each do |key|
-  batch 'import_keys' do
+  batch "import_keys_#{key}" do
     command "gpg --import #{node['gnugpg']['temp']['directory']}\\#{key}"
     retries 3
     only_if { ::File.exist?("#{node['gnugpg']['temp']['directory']}\\#{key}") }
