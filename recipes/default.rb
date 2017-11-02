@@ -4,8 +4,9 @@
 #
 # Copyright (c) 2017 Rodel M. Talampas, All Rights Reserved.
 
-directory node['gnugpg']['temp']['directory'].to_s do
+directory 'create_gpg_temp_dir' do
   group 'Administrators'
+  path node['gnugpg']['temp']['directory'].to_s
   action :create
 end
 
