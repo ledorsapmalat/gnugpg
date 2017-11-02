@@ -1,20 +1,60 @@
 # gnugpg Cookbook
-Cookbook to deploy gnugpg - a complete and free implementation of the OpenPGP standard.
+Cookbook to deploy gnugpg - a complete and free implementation of the OpenPGP standard. 
 
 [![Gem Version](https://badge.fury.io/rb/kitchen-vagrant.svg)](http://badge.fury.io/rb/kitchen-vagrant)
 [![Build Status](https://travis-ci.org/rodel-talampas/gnugpg.svg?branch=master)](https://travis-ci.org/rodel-talampas/gnugpg)
 
-# Requirements
+## Requirements
 
-# Platform
-- CentOS, Red Hat
-- Amazon Linux, Amazon
+### Windows Server
+
+There are two things to override among `gnugpg` attributes
+
+`node['gnugpg']['keys']['file']` - this defaults to `c:\tmp` directory
+`node['gnugpg']['temp']['directory']` - this is an array of GPG keys that you want to install
+
+There is a need to create a wrapper recipe to copy your GPG keys into the target host. The `gnugpg` cookbook expects the key or keys to be inside `node['gnugpg']['temp']['directory']` directory.
+
+This cookbook needs to be included after the wrapper has been called. 
+
+### Chef
+
+- Chef 12.7+
+
+### Platform
+
+- CentOS, Red Hat - (to support on next version)    
+- Amazon Linux, Amazon - (to support on next version)
 - Windows Server
 
-Tested on:
+## Tested on:
 
-# Usage
+- Windows Server 2012 Standard R2
 
+## Usage
+
+Use the following code snippets.
+
+#### Examples (Windows)
+```
+gnugpg_override.rb
+---------------------
+override['gnugpg']['keys']['file'] = ['gpg-secret-key.asc']
+override['gnugpg']['temp']['directory'] = 'c:\\temp'
+
+
+gnugpg_warpper_recipe.rb
+---------------------
+node['gnugpg']['keys']['file'].each do |key|
+  file "create_#{key}"
+    group "Administrators"
+    path "#{node['gnugpg']['temp']['directory']}\\#{key}"
+    source "gpg/#{key}"
+  end
+end
+
+include_recipe 'gnugpg::default'
+```
 
 # Authors
 Author:: Rodel M. Talampas
