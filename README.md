@@ -10,7 +10,7 @@ Cookbook to deploy gnugpg - a complete and free implementation of the OpenPGP st
 
 There are two things to override among `gnugpg` attributes
 
-`node['gnugpg']['keys']['file']` - this defaults to `c:\tmp` directory
+`node['gnugpg']['keys']['file']` - this defaults to `c:\tmp` directory \n
 `node['gnugpg']['temp']['directory']` - this is an array of GPG keys that you want to install
 
 There is a need to create a wrapper recipe to copy your GPG keys into the target host. The `gnugpg` cookbook expects the key or keys to be inside `node['gnugpg']['temp']['directory']` directory.
