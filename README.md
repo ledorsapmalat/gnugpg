@@ -44,13 +44,11 @@ override['gnugpg']['keys']['file'] = ['gpg-secret-key.asc']
 override['gnugpg']['temp']['directory'] = 'c:\\temp'
 
 
-gnugpg_warpper_recipe.rb
+gnugpg_wrapper_recipe.rb
 ---------------------
 node['gnugpg']['keys']['file'].each do |key|
-  file "create_#{key}"
-    group "Administrators"
-    path "#{node['gnugpg']['temp']['directory']}\\#{key}"
-    source "gpg/#{key}"
+  template "#{node['gnugpg']['temp']['directory']}\\#{key}" do
+    source "gpg/#{key}.erb"
   end
 end
 

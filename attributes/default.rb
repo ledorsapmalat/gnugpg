@@ -25,4 +25,4 @@ default['gnugpg']['key']['public'] = 'changeme'
 default['gnugpg']['key']['private'] = 'changeme'
 default['gnugpg']['key']['passphrase'] = 'changeme'
 
-default['gnugpg']['keys']['file'] = ['gpg-secret-key.asc']
+default['gnugpg']['keys']['file'] = []
