@@ -1,8 +1,8 @@
 # gnugpg Cookbook
-Cookbook to deploy gnugpg - a complete and free implementation of the OpenPGP standard. 
+Cookbook to deploy gnugpg - a complete and free implementation of the OpenPGP standard.
 
 [![Gem Version](https://badge.fury.io/rb/kitchen-vagrant.svg)](http://badge.fury.io/rb/kitchen-vagrant)
-[![Build Status](https://travis-ci.org/rodel-talampas/gnugpg.svg?branch=master)](https://travis-ci.org/rodel-talampas/gnugpg)
+[![Build Status](https://travis-ci.org/rodel-talampas/gnugpg.svg?branch=master)](https://travis-ci.org/ledorsapmalat/gnugpg)
 
 ## Requirements
 
@@ -16,7 +16,7 @@ There are two things to override among `gnugpg` attributes
 
 There is a need to create a wrapper recipe to copy your GPG keys into the target host. The `gnugpg` cookbook expects the key or keys to be inside `node['gnugpg']['temp']['directory']` directory.
 
-This cookbook needs to be included after the wrapper has been called. 
+This cookbook needs to be included after the wrapper has been called.
 
 ### Chef
 
