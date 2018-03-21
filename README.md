@@ -2,7 +2,7 @@
 Cookbook to deploy gnugpg - a complete and free implementation of the OpenPGP standard.
 
 [![Gem Version](https://badge.fury.io/rb/kitchen-vagrant.svg)](http://badge.fury.io/rb/kitchen-vagrant)
-[![Build Status](https://travis-ci.org/rodel-talampas/gnugpg.svg?branch=master)](https://travis-ci.org/ledorsapmalat/gnugpg)
+[![Build Status](https://travis-ci.org/ledorsapmalat/gnugpg.svg?branch=master)](https://travis-ci.org/ledorsapmalat/gnugpg)
 
 ## Requirements
 
