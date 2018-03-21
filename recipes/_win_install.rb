@@ -47,7 +47,7 @@ end
 
 node['gnugpg']['keys']['file'].each do |key|
   batch "import_keys_#{key}" do
-    command "gpg --import #{node['gnugpg']['temp']['directory']}\\#{key}"
+    code "gpg --import #{node['gnugpg']['temp']['directory']}\\#{key}"
     retries 3
     only_if { ::File.exist?("#{node['gnugpg']['temp']['directory']}\\#{key}") }
   end
